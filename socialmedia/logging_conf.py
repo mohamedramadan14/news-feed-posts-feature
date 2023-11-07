@@ -5,9 +5,12 @@ from socialmedia.config import DevConfig, ProdConfig, config
 
 
 def obfuscated(email: str, obfuscated_length: int) -> str:
-    visible_chars = email[:obfuscated_length]
-    first, last = email.split("@")
-    return visible_chars + ("*" * (len(first) - obfuscated_length)) + last
+    if "@" in email:
+        visible_chars = email[:obfuscated_length]
+        first, last = email.split("@")
+        return visible_chars + ("*" * (len(first) - obfuscated_length)) + "@" + last
+    else:
+        return email
 
 
 class EmailObfuscationFilter(logging.Filter):
