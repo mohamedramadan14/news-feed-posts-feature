@@ -9,9 +9,9 @@ metadata = sqlalchemy.MetaData()
 
 # This args important for run sqlite in multithreading for background tasks as it's default nature is single threaded
 # engine : allows us to connect to specific database like sqlite , mysql , postgres ..etc
-engine = sqlalchemy.create_engine(
-    config.DATABASE_URL, connect_args={"check_same_thread": False}
-)
+
+connect_args = {"check_same_thread": False} if "sqlite" in config.DATABASE_URL else {}
+engine = sqlalchemy.create_engine(config.DATABASE_URL, connect_args=connect_args)
 
 post_table = sqlalchemy.Table(
     "posts",
@@ -53,6 +53,8 @@ like_table = sqlalchemy.Table(
 metadata.create_all(engine)
 
 # connect to database and give us back a database object to interact with database
+
+db_args = {"minsize": 1, "maxsize": 3} if "postgres" in config.DATABASE_URL else {}
 database = databases.Database(
-    config.DATABASE_URL, force_rollback=config.DB_FORCE_ROLLBACK
+    config.DATABASE_URL, force_rollback=config.DB_FORCE_ROLLBACK, **db_args
 )
