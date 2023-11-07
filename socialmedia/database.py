@@ -54,7 +54,7 @@ metadata.create_all(engine)
 
 # connect to database and give us back a database object to interact with database
 
-db_args = {"minsize": 1, "maxsize": 3} if "postgres" in config.DATABASE_URL else {}
+db_args = {"min_size": 1, "max_size": 3} if "postgres" in config.DATABASE_URL else {}
 database = databases.Database(
     config.DATABASE_URL, force_rollback=config.DB_FORCE_ROLLBACK, **db_args
 )
