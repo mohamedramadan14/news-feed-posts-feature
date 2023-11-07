@@ -1,0 +1,59 @@
+# Ignore Python bytecode files
+*.pyc
+__pycache__
+
+# Ignore environment files and database files
+.env
+*.db
+test.db
+
+# Ignore virtual environments
+.venv
+env3.*
+env
+
+# Ignore Visual Studio Code settings
+.vscode/**
+
+# Ignore image files
+*.png
+
+# Ignore Jupyter Notebook checkpoints and cache
+.ipynb_checkpoints
+.mypy_cache
+
+# Ignore pytest cache and coverage reports
+.pytest_cache
+htmlcov
+.coverage
+coverage.xml
+
+# Ignore build artifacts and documentation files
+dist
+site
+docs_build
+site_build
+docs.zip
+
+# Ignore log files
+log.txt
+
+# Ignore version control files
+.idea
+.netlify
+
+# Ignore editor temporary files
+*~
+.*.sw?
+.cache
+
+# Ignore macOS system files
+.DS_Store
+
+*.png
+.vscode
+
+*.log
+
+github_profile_to_notion.txt
+logtail_email.txt
