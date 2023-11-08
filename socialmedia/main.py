@@ -1,15 +1,24 @@
 import logging
 from contextlib import asynccontextmanager
 
+import sentry_sdk
 from asgi_correlation_id import CorrelationIdMiddleware
 from fastapi import FastAPI, HTTPException
 from fastapi.exception_handlers import http_exception_handler
 
+from socialmedia.config import config
 from socialmedia.database import database
 from socialmedia.logging_conf import configure_logging
 from socialmedia.routers.post import router as post_router
-from socialmedia.routers.user import router as user_router
 from socialmedia.routers.upload import router as upload_router
+from socialmedia.routers.user import router as user_router
+
+sentry_sdk.init(
+    dsn=config.SENTRY_DSN,
+    traces_sample_rate=1.0,
+    profiles_sample_rate=1.0,
+)
+
 
 logger = logging.getLogger(__name__)
 

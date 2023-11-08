@@ -57,3 +57,6 @@ log.txt
 
 github_profile_to_notion.txt
 logtail_email.txt
+
+.ruff_cache
+.github
