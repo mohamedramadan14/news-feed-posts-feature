@@ -23,21 +23,31 @@ class GlobalConfig(BaseConfig):
     B2_KEY_ID: Optional[str] = None
     B2_APPLICATION_KEY: Optional[str] = None
     B2_BUCKET_NAME: Optional[str] = None
+    SENTRY_DSN: Optional[str] = None
 
 
 class DevConfig(GlobalConfig):
-    model_config = SettingsConfigDict(env_prefix="DEV_" , extra="ignore",)
+    model_config = SettingsConfigDict(
+        env_prefix="DEV_",
+        extra="ignore",
+    )
 
 
 class TestConfig(GlobalConfig):
     DATABASE_URL: str = "sqlite:///test.db"
     DB_FORCE_ROLLBACK: bool = True
     JWT_ALGORITHM: str = "HS256"
-    model_config = SettingsConfigDict(env_prefix="TEST_", extra="ignore",)
+    model_config = SettingsConfigDict(
+        env_prefix="TEST_",
+        extra="ignore",
+    )
 
 
 class ProdConfig(GlobalConfig):
-    model_config = SettingsConfigDict(env_prefix="PROD_", extra="ignore",)
+    model_config = SettingsConfigDict(
+        env_prefix="PROD_",
+        extra="ignore",
+    )
 
 
 def get_config(env_state: str):
