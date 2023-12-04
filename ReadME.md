@@ -1,6 +1,6 @@
-# Post Feature for Feed Feature 🥇
+# Post Feature For Feed Feature (Social Media) 🥇
 
-Simple implementation for Post Feature Where Users create accounts and confirm it via email confirmation.Users can create, read, update and delete posts.also users can like and unlike posts and comment on posts and edit and delete likes and comments.
+Simple implementation of a social media post feature.Users can sign up and activate their account via confirmation email. They can then create posts, comment on them and like them. 
 
 ## High-Level Design
 
@@ -8,8 +8,8 @@ Simple implementation for Post Feature Where Users create accounts and confirm i
 
 ## Build Status
 
-![Static Badge](https://img.shields.io/badge/Build_Status-Success-blue)
-![Static Badge](https://img.shields.io/badge/Test_Coverage-95%25-green)
+![Static Badge](https://img.shields.io/badge/Build_Status-Sucess-blue)
+![Static Badge](https://img.shields.io/badge/Test_Coverage-94%25-dark_green)
 ![Static Badge](https://img.shields.io/badge/CI_CD-Included-dark_green)
 
 ## Monitoring with Sentry
@@ -24,31 +24,24 @@ Simple implementation for Post Feature Where Users create accounts and confirm i
 
 Follow these steps to run the project offline:
 
-1. **Clone the repository :**
-```bash
+1. Clone the repository:
+ ```bash
    git clone https://github.com/mohamedramadan14/news-feed-posts-feature.git
 ```
 
-2. **Create Virtual Environment :**
+2. Create Virtual Environment :
 ```bash
- python -m venv venv
- source venv/Scripts/activate [Windows]
- #OR
- source venv/bin/activate     [Linux/Mac]
+   python -m venv venv
+   source venv/Scripts/activate [Windows] 
+   # OR 
+   source venv/bin/activate     [Linux/Mac]
 ```
-
-3. **Install Dependencies :**
+3. Install Dependencies :
 ```bash
    pip install -r requirements.txt
 ```
-
-4. **Fill the .env file :**
+4. Run the project :
 ```bash
-  cp .env.example .env
-```
-
-5. **Run the project :**
- ```bash
    cd socialmedia
    uvicorn main:app --reload
- ```
+```
