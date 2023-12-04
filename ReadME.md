@@ -17,7 +17,7 @@ Simple implementation of a social media post feature.Users can sign up and activ
 ## Build Status
 
 ![Static Badge](https://img.shields.io/badge/Build_Status-Sucess-blue) 
-![Static Badge](https://img.shields.io/badge/Test_Coverage-94%-dark_green)
+![Static Badge](https://img.shields.io/badge/Test_Coverage-94%25-green)
 ![Static Badge](https://img.shields.io/badge/CI_CD-Included-dark_green)
 
 
